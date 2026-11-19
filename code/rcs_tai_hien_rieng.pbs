@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -N ton_rcs_rieng
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=0
+#PBS -l walltime=24:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Tai hien RCS (H3-b). Uoc 3-6 gio CPU.
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/rcs_rieng_${PBS_JOBID}.log 2>&1
+export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 PYTHONUNBUFFERED=1
+cd $P
+mkdir -p results/b1moi_rcs
+sha256sum scripts/rcs_tai_hien_rieng.py scripts/b1_diem.py
+O=results/b1moi_rcs
+timeout 12h $PY scripts/rcs_tai_hien_rieng.py --ds benchmark --out $O/benchmark_rcs-rieng_seed20261107_20261114.json
+timeout 9h $PY scripts/rcs_tai_hien_rieng.py --ds beta --out $O/beta_rcs-rieng_seed20261107_20261114.json

@@ -1,0 +1,29 @@
+#!/bin/bash
+#PBS -N ton_dtkiem
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=4:mem=12gb:gpu_slots=0
+#PBS -l walltime=03:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Kiem tuong duong zcu104_doithu_ktnr.py --kiem tren CPU HPC (khong do gio). Ban 2: moi loi deu lam job ket thuc ma khac 0.
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+D=$P/results/zcu104_doithu_kiem
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+cd $D || exit 2
+cp $P/scripts/zcu104_doithu_ktnr.py . || exit 2
+cp $P/scripts/cca_net_tai_hien.py cca_net/ || exit 2
+sha256sum zcu104_doithu_ktnr.py || exit 2
+(cd cca_net/goc && sha256sum -c SHA256SUMS.txt) || { echo "MA GOC CCA-NET BI SUA"; exit 3; }
+export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 CUDA_VISIBLE_DEVICES=""
+LOI=0
+for T in 1.0 0.6; do
+  for pp in ktnr fbcca rcs ed22 edgoc; do
+    $PY zcu104_doithu_ktnr.py --pp $pp --T $T --luong 4 --kiem; rc=$?; echo "ma thoat $pp $T: $rc"; [ $rc -ne 0 ] && LOI=1
+  done
+  $PY zcu104_doithu_ktnr.py --pp ccanet --T $T --luong 4 --kiem --kiem-luot 40; rc=$?; echo "ma thoat ccanet $T: $rc"; [ $rc -ne 0 ] && LOI=1
+done
+for pp in ktnr fbcca rcs ed22 edgoc ccanet; do                        # chay thu duong do gio (it luot) de bat loi chay
+  $PY zcu104_doithu_ktnr.py --pp $pp --T 1.0 --luong 4 --n 5 --khoi-dong 2; rc=$?; echo "ma thoat do $pp: $rc"; [ $rc -ne 0 ] && LOI=1
+done
+[ $LOI -ne 0 ] && { echo "CO LOI"; exit 1; }
+echo XONG

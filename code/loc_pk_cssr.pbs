@@ -1,0 +1,34 @@
+#!/bin/bash
+#PBS -N ton_loc_pk
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=10:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/loc_nhan_qua/
+# CSS-R voi loc pha khong tren bo dem: kiem hoi quy, huan luyen mang nen, ktnr_buoc1 (Benchmark, BETA, 1,0 s).
+set -uo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1; cd $P
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > logs/loc_nhan_qua/pk_c012_${PBS_JOBID%%.*}.log 2>&1
+export CUDA_MPS_PIPE_DIRECTORY=/dev/null OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONUNBUFFERED=1
+nvidia-smi --query-gpu=name,memory.total --format=csv
+S=scripts_loc; W=$S/chay_loc.py; R=results/loc_nhan_qua/cssr_pk; D=$(date +%Y%m%d); mkdir -p $R
+sha256sum $S/chay_loc.py $S/loc_pk_kiem_hoi_quy.py scripts/global_dnn_huanluyen.py scripts/global_dnn_thichnghi.py scripts/global_dnn.py scripts/ktnr_buoc1.py scripts/b1moi_lai.py scripts/b1_diem.py
+echo "kiem $(date +%T)"
+[ -f $R/kiem_ktnr-nq_fold1.json ] || $PY $W --che-do nq -- scripts/ktnr_buoc1.py --ds benchmark --T 1.0 --trongso results/b1v7_lo2/T10 --folds 1 --out $R/kiem_ktnr-nq_fold1.json || { echo "kiem a LOI"; exit 5; }
+[ -f $R/kiem_nen-nq/fold001.json ] || $PY $W --che-do nq -- scripts/global_dnn_huanluyen.py --ds benchmark --T 1.0 --folds 1::35 --out $R/kiem_nen-nq || { echo "kiem b LOI"; exit 5; }
+$PY $S/loc_pk_kiem_hoi_quy.py $R/kiem_ktnr-nq_fold1.json results/b1moi_ktnr/benchmark_ktnr-buoc1_T10_seed20261107_20261115.json $R/kiem_nen-nq results/b1v7_lo2/T10 || { echo "kiem KHONG DAT: dung"; exit 5; }
+huan_luyen() {   # $1 bo, $2 thu muc
+  local pids=()
+  for k in 1 2 3 4; do
+    $PY $W --che-do pk -- scripts/global_dnn_huanluyen.py --ds $1 --T 1.0 --folds $k::4 --out $2 > $2.w$k.log 2>&1 &
+    pids+=($!)
+  done
+  for p in "${pids[@]}"; do wait $p || { echo "LOI huan luyen $1"; exit 1; }; done
+}
+for ds in benchmark beta; do
+  echo "huan luyen $ds $(date +%T)"; huan_luyen $ds $R/${ds}_T10
+  echo "ktnr $ds $(date +%T)"
+  $PY $W --che-do pk -- scripts/ktnr_buoc1.py --ds $ds --T 1.0 --trongso $R/${ds}_T10 --out $R/${ds}_ktnr-buoc1-pk_T10_seed20261107_${D}.json || { echo "LOI ktnr $ds"; exit 1; }
+done
+echo "XONG $(date +%T)"

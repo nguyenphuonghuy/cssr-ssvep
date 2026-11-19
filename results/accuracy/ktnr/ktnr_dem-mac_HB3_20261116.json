@@ -1,0 +1,126 @@
+{
+ "40lop_9kenh_250Hz_T0.6": {
+  "theo_lop": {
+   "l1": 4050,
+   "l2": 29700,
+   "l3": 72600,
+   "l4": 363000,
+   "fc": 66000
+  },
+  "mang": 535350,
+  "nhanh_R": {
+   "chieu_khong_gian": 1350,
+   "chuan_y": 150,
+   "chieu_co_so": 60000,
+   "chuan_chieu": 400,
+   "ti_le": 40,
+   "z": 160,
+   "gop": 40
+  },
+  "tong": 597490
+ },
+ "40lop_9kenh_250Hz_T1.0": {
+  "theo_lop": {
+   "l1": 6750,
+   "l2": 49500,
+   "l3": 121000,
+   "l4": 605000,
+   "fc": 110000
+  },
+  "mang": 892250,
+  "nhanh_R": {
+   "chieu_khong_gian": 2250,
+   "chuan_y": 250,
+   "chieu_co_so": 100000,
+   "chuan_chieu": 400,
+   "ti_le": 40,
+   "z": 160,
+   "gop": 40
+  },
+  "tong": 995390
+ },
+ "9lop_9kenh_250Hz_T0.6": {
+  "theo_lop": {
+   "l1": 4050,
+   "l2": 29700,
+   "l3": 72600,
+   "l4": 363000,
+   "fc": 14850
+  },
+  "mang": 484200,
+  "nhanh_R": {
+   "chieu_khong_gian": 1350,
+   "chuan_y": 150,
+   "chieu_co_so": 13500,
+   "chuan_chieu": 90,
+   "ti_le": 9,
+   "z": 36,
+   "gop": 9
+  },
+  "tong": 499344
+ },
+ "9lop_9kenh_250Hz_T1.0": {
+  "theo_lop": {
+   "l1": 6750,
+   "l2": 49500,
+   "l3": 121000,
+   "l4": 605000,
+   "fc": 24750
+  },
+  "mang": 807000,
+  "nhanh_R": {
+   "chieu_khong_gian": 2250,
+   "chuan_y": 250,
+   "chieu_co_so": 22500,
+   "chuan_chieu": 90,
+   "ti_le": 9,
+   "z": 36,
+   "gop": 9
+  },
+  "tong": 832144
+ },
+ "12lop_8kenh_256Hz_T0.6": {
+  "theo_lop": {
+   "l1": 3696,
+   "l2": 27104,
+   "l3": 74536,
+   "l4": 372680,
+   "fc": 20328
+  },
+  "mang": 498344,
+  "nhanh_R": {
+   "chieu_khong_gian": 1232,
+   "chuan_y": 154,
+   "chieu_co_so": 18480,
+   "chuan_chieu": 120,
+   "ti_le": 12,
+   "z": 48,
+   "gop": 12
+  },
+  "tong": 518402
+ },
+ "12lop_8kenh_256Hz_T1.0": {
+  "theo_lop": {
+   "l1": 6144,
+   "l2": 45056,
+   "l3": 123904,
+   "l4": 619520,
+   "fc": 33792
+  },
+  "mang": 828416,
+  "nhanh_R": {
+   "chieu_khong_gian": 2048,
+   "chuan_y": 256,
+   "chieu_co_so": 30720,
+   "chuan_chieu": 120,
+   "ti_le": 12,
+   "z": 48,
+   "gop": 12
+  },
+  "tong": 861632
+ },
+ "HB3": {
+  "gia_tri": 995390
+ },
+ "script_sha256": "5c1993289e90b091e0db187c04fd0df31f7801987fccd039db22ae640c48a35a"
+}

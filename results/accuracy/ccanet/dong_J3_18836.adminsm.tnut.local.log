@@ -1,0 +1,18 @@
+203f417fe0822f5d0a8c5bd4b74b19452e77336b624b178876cb046ce72ea393  scripts/cca_net_tai_hien.py
+12fe405f87e2e71166e1ca88ee8111843962b66e2d391aa3738087b9108150c8  scripts/tham-chieu-python/cca-net/shim/config.py
+CCA.py: OK
+FBCCA.py: OK
+FBTTCCA.py: OK
+config.py: OK
+function.py: OK
+main.py: OK
+model.py: OK
+name, memory.total [MiB]
+NVIDIA H100 NVL, 95830 MiB
+NVIDIA H100 NVL, 95830 MiB
+fold 1: xong 285 s
+RSS_DINH_KB 11711568
+fold 2: xong 233 s
+RSS_DINH_KB 7322020
+RSS dinh 11711568 KB -> 2 tien trinh
+XONG

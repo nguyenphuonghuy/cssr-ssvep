@@ -1,0 +1,38 @@
+/gpfs0/users/gv_nphuy/envs/eeg-torch27/lib/python3.11/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+fold 1: goc ktnr 0.790 | B 6 T 10 | lech z {'z_ktn': 4.999942786465539e-07, 'z_R': 4.999276642658756e-07} | 145 s
+fold 2: goc ktnr 0.900 | B 6 T 10 | lech z {'z_ktn': 4.999990704801505e-07, 'z_R': 4.999275000638903e-07} | 148 s
+fold 3: goc ktnr 0.955 | B 6 T 10 | lech z {'z_ktn': 4.999671222583046e-07, 'z_R': 4.999680512096649e-07} | 152 s
+fold 4: goc ktnr 0.820 | B 6 T 10 | lech z {'z_ktn': 4.999038658026755e-07, 'z_R': 4.999483476098021e-07} | 155 s
+fold 5: goc ktnr 0.625 | B 6 T 10 | lech z {'z_ktn': 4.998931982802546e-07, 'z_R': 4.999044920239726e-07} | 158 s
+fold 6: goc ktnr 0.765 | B 6 T 10 | lech z {'z_ktn': 4.999683158590784e-07, 'z_R': 4.999970751318195e-07} | 161 s
+fold 7: goc ktnr 0.740 | B 6 T 10 | lech z {'z_ktn': 4.999955338647055e-07, 'z_R': 4.99888879956778e-07} | 164 s
+fold 8: goc ktnr 0.320 | B 6 T 10 | lech z {'z_ktn': 4.999888725820689e-07, 'z_R': 4.999508658176666e-07} | 167 s
+fold 9: goc ktnr 0.615 | B 6 T 10 | lech z {'z_ktn': 4.999755305323816e-07, 'z_R': 4.999389935367304e-07} | 170 s
+fold 10: goc ktnr 0.645 | B 6 T 10 | lech z {'z_ktn': 4.999556770801661e-07, 'z_R': 4.99972280687544e-07} | 174 s
+fold 11: goc ktnr 0.100 | B 6 T 10 | lech z {'z_ktn': 4.999791214377325e-07, 'z_R': 4.999717512221835e-07} | 177 s
+fold 12: goc ktnr 0.540 | B 6 T 10 | lech z {'z_ktn': 4.999539926914265e-07, 'z_R': 4.999991469745169e-07} | 180 s
+fold 13: goc ktnr 0.085 | B 6 T 10 | lech z {'z_ktn': 4.999927396553971e-07, 'z_R': 4.999025745924812e-07} | 183 s
+fold 14: goc ktnr 0.590 | B 6 T 10 | lech z {'z_ktn': 4.999737187663666e-07, 'z_R': 4.999778580039305e-07} | 187 s
+fold 15: goc ktnr 0.570 | B 6 T 10 | lech z {'z_ktn': 4.99953149629695e-07, 'z_R': 4.998057119842692e-07} | 190 s
+fold 16: goc ktnr 0.465 | B 6 T 10 | lech z {'z_ktn': 4.999750348733123e-07, 'z_R': 4.999687850393286e-07} | 193 s
+fold 17: goc ktnr 0.670 | B 6 T 10 | lech z {'z_ktn': 4.999047183984473e-07, 'z_R': 4.999672649219633e-07} | 196 s
+fold 18: goc ktnr 0.805 | B 6 T 10 | lech z {'z_ktn': 4.999685672135712e-07, 'z_R': 4.99972084871958e-07} | 200 s
+fold 19: goc ktnr 0.320 | B 6 T 10 | lech z {'z_ktn': 4.99986414770337e-07, 'z_R': 4.999760012669441e-07} | 203 s
+fold 20: goc ktnr 0.590 | B 6 T 10 | lech z {'z_ktn': 4.999396506361053e-07, 'z_R': 4.999841645147995e-07} | 206 s
+fold 21: goc ktnr 0.745 | B 6 T 10 | lech z {'z_ktn': 4.999201703714817e-07, 'z_R': 4.998608646999969e-07} | 210 s
+fold 22: goc ktnr 0.910 | B 6 T 10 | lech z {'z_ktn': 4.999932429351067e-07, 'z_R': 4.999158160767792e-07} | 213 s
+fold 23: goc ktnr 0.275 | B 6 T 10 | lech z {'z_ktn': 4.999877438738309e-07, 'z_R': 4.999328278021409e-07} | 217 s
+fold 24: goc ktnr 0.830 | B 6 T 10 | lech z {'z_ktn': 4.999051134157995e-07, 'z_R': 4.999986020909342e-07} | 220 s
+fold 25: goc ktnr 0.815 | B 6 T 10 | lech z {'z_ktn': 4.999790153004113e-07, 'z_R': 4.998868720074157e-07} | 224 s
+fold 26: goc ktnr 0.940 | B 6 T 10 | lech z {'z_ktn': 4.99998847880434e-07, 'z_R': 4.999745962241953e-07} | 227 s
+fold 27: goc ktnr 0.580 | B 6 T 10 | lech z {'z_ktn': 4.999534746127909e-07, 'z_R': 4.998972613634578e-07} | 230 s
+fold 28: goc ktnr 0.900 | B 6 T 10 | lech z {'z_ktn': 4.999594557242304e-07, 'z_R': 4.999660536686434e-07} | 234 s
+fold 29: goc ktnr 0.160 | B 6 T 10 | lech z {'z_ktn': 4.997738102252569e-07, 'z_R': 4.999421451268304e-07} | 238 s
+fold 30: goc ktnr 0.745 | B 6 T 10 | lech z {'z_ktn': 4.999847157960424e-07, 'z_R': 4.998702047287473e-07} | 242 s
+fold 31: goc ktnr 0.865 | B 6 T 10 | lech z {'z_ktn': 4.999679608097551e-07, 'z_R': 4.999961324136937e-07} | 246 s
+fold 32: goc ktnr 0.920 | B 6 T 10 | lech z {'z_ktn': 4.999959493934281e-07, 'z_R': 4.999177105613484e-07} | 249 s
+fold 33: goc ktnr 0.425 | B 6 T 10 | lech z {'z_ktn': 4.999845447661855e-07, 'z_R': 4.999214335832391e-07} | 253 s
+fold 34: goc ktnr 0.690 | B 6 T 10 | lech z {'z_ktn': 4.999558837481821e-07, 'z_R': 4.999787427406588e-07} | 256 s
+fold 35: goc ktnr 0.500 | B 6 T 10 | lech z {'z_ktn': 4.999115951198618e-07, 'z_R': 4.999105198688625e-07} | 259 s
+xong 259.64846420288086

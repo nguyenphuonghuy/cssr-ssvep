@@ -1,0 +1,188 @@
+{
+ "benchmark_ED_22_T0.6": {
+  "S": 34,
+  "nch": 22,
+  "mang_moi_nguon": 535350,
+  "theo_lop": {
+   "l1": 4050,
+   "l2": 29700,
+   "l3": 72600,
+   "l4": 363000,
+   "fc": 66000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 3300,
+   "chuan_zx": 3300,
+   "mau_so": 44,
+   "r2": 22,
+   "chieu_co_so": 33000,
+   "chuan_chieu": 220,
+   "chia_cca": 22
+  },
+  "moi_nguon": 575258,
+  "tong": 19558772
+ },
+ "benchmark_ED_22_T1.0": {
+  "S": 34,
+  "nch": 22,
+  "mang_moi_nguon": 892250,
+  "theo_lop": {
+   "l1": 6750,
+   "l2": 49500,
+   "l3": 121000,
+   "l4": 605000,
+   "fc": 110000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 5500,
+   "chuan_zx": 5500,
+   "mau_so": 44,
+   "r2": 22,
+   "chieu_co_so": 55000,
+   "chuan_chieu": 220,
+   "chia_cca": 22
+  },
+  "moi_nguon": 958558,
+  "tong": 32590972
+ },
+ "benchmark_ED_du_T0.6": {
+  "S": 34,
+  "nch": 120,
+  "mang_moi_nguon": 13486050,
+  "theo_lop": {
+   "l1": 4050,
+   "l2": 162000,
+   "l3": 2160000,
+   "l4": 10800000,
+   "fc": 360000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 18000,
+   "chuan_zx": 18000,
+   "mau_so": 240,
+   "r2": 120,
+   "chieu_co_so": 180000,
+   "chuan_chieu": 1200,
+   "chia_cca": 120
+  },
+  "moi_nguon": 13703730,
+  "tong": 465926820
+ },
+ "benchmark_ED_du_T1.0": {
+  "S": 34,
+  "nch": 120,
+  "mang_moi_nguon": 22476750,
+  "theo_lop": {
+   "l1": 6750,
+   "l2": 270000,
+   "l3": 3600000,
+   "l4": 18000000,
+   "fc": 600000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 30000,
+   "chuan_zx": 30000,
+   "mau_so": 240,
+   "r2": 120,
+   "chieu_co_so": 300000,
+   "chuan_chieu": 1200,
+   "chia_cca": 120
+  },
+  "moi_nguon": 22838430,
+  "tong": 776506620
+ },
+ "beta_ED_22_T0.6": {
+  "S": 69,
+  "nch": 22,
+  "mang_moi_nguon": 535350,
+  "theo_lop": {
+   "l1": 4050,
+   "l2": 29700,
+   "l3": 72600,
+   "l4": 363000,
+   "fc": 66000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 3300,
+   "chuan_zx": 3300,
+   "mau_so": 44,
+   "r2": 22,
+   "chieu_co_so": 33000,
+   "chuan_chieu": 220,
+   "chia_cca": 22
+  },
+  "moi_nguon": 575258,
+  "tong": 39692802
+ },
+ "beta_ED_22_T1.0": {
+  "S": 69,
+  "nch": 22,
+  "mang_moi_nguon": 892250,
+  "theo_lop": {
+   "l1": 6750,
+   "l2": 49500,
+   "l3": 121000,
+   "l4": 605000,
+   "fc": 110000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 5500,
+   "chuan_zx": 5500,
+   "mau_so": 44,
+   "r2": 22,
+   "chieu_co_so": 55000,
+   "chuan_chieu": 220,
+   "chia_cca": 22
+  },
+  "moi_nguon": 958558,
+  "tong": 66140502
+ },
+ "beta_ED_du_T0.6": {
+  "S": 69,
+  "nch": 120,
+  "mang_moi_nguon": 13486050,
+  "theo_lop": {
+   "l1": 4050,
+   "l2": 162000,
+   "l3": 2160000,
+   "l4": 10800000,
+   "fc": 360000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 18000,
+   "chuan_zx": 18000,
+   "mau_so": 240,
+   "r2": 120,
+   "chieu_co_so": 180000,
+   "chuan_chieu": 1200,
+   "chia_cca": 120
+  },
+  "moi_nguon": 13703730,
+  "tong": 945557370
+ },
+ "beta_ED_du_T1.0": {
+  "S": 69,
+  "nch": 120,
+  "mang_moi_nguon": 22476750,
+  "theo_lop": {
+   "l1": 6750,
+   "l2": 270000,
+   "l3": 3600000,
+   "l4": 18000000,
+   "fc": 600000
+  },
+  "do_giong_moi_nguon": {
+   "tich_zt_zx": 30000,
+   "chuan_zx": 30000,
+   "mau_so": 240,
+   "r2": 120,
+   "chieu_co_so": 300000,
+   "chuan_chieu": 1200,
+   "chia_cca": 120
+  },
+  "moi_nguon": 22838430,
+  "tong": 1575851670
+ },
+ "quy_uoc": "Dem MAC MOI QUYET DINH cua Ensemble-DNN (ban tai hien ensemble_dnn.py, theo testing.m cua ma goc) cung quy uoc voi ktnr_dem_mac.py.\nMot quyet dinh = voi MOI nguon s (S = so nguoi - 1): forward toan mang nguon s + do giong (do_giong trong ensemble_dnn.py) + bo phieu.\nQuy uoc (thuan loi nhat cho Ensemble-DNN, de khong thoi phong khoang cach):\n  - u = l1(x) va W x (l2 chua bias) dung lai tu forward; tru TB lam mat bias nen zx = l2(u) - TB.\n  - mau lop da chieu qua bo loc (zt, da tru TB) va |zt|^2 tinh SAN ngoai tuyen cho moi nguon, moi lop (luu bo nho, khong tinh).\n  - Moi nguon them: <zt, zx> (K ns), |zx|^2 (K ns), chia + nhan trong mau so (2K), r^2 (K); CCA: zx Q (2H K ns), binh phuong tong (2H K),\n    chia (K). Bo phieu: cong, so sanh (khong tinh). Phep cong/tru, can, so sanh khong tinh (nhu ktnr_dem_mac.py).\n  - Bank loc ngoai tran, khong tinh (nhu KTN-R).\nKiem: so dem bang moc tren mang = cong thuc GD.dem_mac cua cung mang.\n",
+ "script_sha256": "cc61ef5aaaca6e61b5b4a180c673b434355959a58f4f9d01da122bca47670e53"
+}

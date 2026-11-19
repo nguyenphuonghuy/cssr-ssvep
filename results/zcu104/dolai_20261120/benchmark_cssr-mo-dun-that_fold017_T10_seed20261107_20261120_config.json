@@ -1,0 +1,19 @@
+{
+ "ds": "benchmark",
+ "T": 1.0,
+ "fold": 17,
+ "seed": 20278117,
+ "thiet_bi": "cuda",
+ "trongso_sha256": "ad46f78bd36551b8fe9f3fab535e2341b9fc6ad596c172e34f324840976d56c9",
+ "nguon_chon": [
+  16,
+  28,
+  7,
+  1,
+  5
+ ],
+ "ktnr": 0.875,
+ "ktn": 0.76,
+ "script_sha256": "812ab886897189ff3b18309b0959533c4484d4b235429b7926b92f044bb8400a",
+ "ktnr_buoc1_sha256": "5a091cfd048c4d4dd46c0640c040292b5c51ff261e0e8c0686f4ac49d55e9924"
+}

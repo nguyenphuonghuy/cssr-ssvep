@@ -1,0 +1,44 @@
+#!/bin/bash
+#PBS -N ton_lai_eld
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=24:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Kiem doc lap SF kieu B tren eldBETA: huan luyen mang nen LOSO 100 fold x 2 cua so, roi phat lai o che do xac nhan.
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/b1moi_lai_eld_${PBS_JOBID}.log 2>&1
+export CUDA_MPS_PIPE_DIRECTORY=/dev/null
+export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONUNBUFFERED=1
+cd $P
+R=$P/results/b1moi_lai_eld
+mkdir -p $R
+sha256sum scripts/du_lieu_eld.py scripts/b1moi_lai_hoiquy.py scripts/global_dnn_huanluyen.py scripts/global_dnn_thichnghi.py scripts/global_dnn.py scripts/b1moi_lai.py scripts/b1_diem.py
+nvidia-smi --query-gpu=name,memory.total --format=csv
+
+# kiem hoi quy truoc: Benchmark 1,0 s, che do xac nhan (SF_B phai trung job 18691)
+timeout 1h $PY scripts/b1moi_lai.py --ds benchmark --xac-nhan --T 1.0 --trongso results/b1v7_lo2/T10 --out $R/benchmark_b1moi_lai-xn-hoiquy_T10_seed20261107_20261114.json
+$PY scripts/b1moi_lai_hoiquy.py $R/benchmark_b1moi_lai-xn-hoiquy_T10_seed20261107_20261114.json results/b1moi_lai/benchmark_b1moi_lai_T10_seed20261107_20261114.json
+
+# chay thu thong truoc (1 fold, 1 vong, khong in so)
+rm -rf $R/_thu
+timeout 30m $PY scripts/global_dnn_huanluyen.py --ds eld --T 1.0 --folds 1::100 --epochs 1 --out $R/_thu
+timeout 30m $PY scripts/b1moi_lai.py --ds eld --xac-nhan --T 1.0 --trongso $R/_thu --folds 1 --im-lang --out $R/_thu/_khong_ghi.json
+
+chay() {   # $1 T, $2 thu muc
+  local pids=()
+  for k in 1 2 3 4; do
+    timeout 8h $PY scripts/global_dnn_huanluyen.py --ds eld --T $1 --folds $k::4 --out $2 > $2.w$k.log 2>&1 &
+    pids+=($!)
+  done
+  local loi=0
+  for p in "${pids[@]}"; do wait $p || loi=1; done
+  if [ $loi -ne 0 ]; then echo "LOI tien trinh con (T=$1); xem $2.w*.log"; exit 1; fi
+}
+chay 1.0 $R/T10
+chay 0.6 $R/T06
+timeout 2h $PY scripts/b1moi_lai.py --ds eld --xac-nhan --T 1.0 --trongso $R/T10 --out $R/eldbeta_b1moi_lai-xn_T10_seed20261107_20261114.json
+timeout 2h $PY scripts/b1moi_lai.py --ds eld --xac-nhan --T 0.6 --trongso $R/T06 --out $R/eldbeta_b1moi_lai-xn_T06_seed20261107_20261114.json
+echo XONG

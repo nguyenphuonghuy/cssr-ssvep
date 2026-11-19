@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -N ton_loc_kiem
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=2:mem=16gb:gpu_slots=0
+#PBS -l walltime=01:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/loc_nhan_qua/
+# Kiem hoi quy loc_nhan_qua_phan_ra.py so voi ket qua da co (2 nguoi moi bo). Chi CPU.
+set -euo pipefail
+cd /gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+export CUDA_VISIBLE_DEVICES="" OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONUNBUFFERED=1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > logs/loc_nhan_qua/kiem_${PBS_JOBID%%.*}.log 2>&1
+sha256sum scripts_loc/*.py
+$PY scripts_loc/loc_nhan_qua_kiem.py scripts_loc/tham_chieu 2

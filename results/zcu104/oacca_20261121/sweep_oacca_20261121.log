@@ -1,0 +1,82 @@
+BAT DAU 05:28:42 0.00 0.01 0.00 1/143 102705
+KIEM oacca5 T1.0 {'n': 240, 'so_khac': 0, 'chi_so_khac': []} 87.88881413618749
+KIEM oacca5 T0.6 {'n': 240, 'so_khac': 0, 'chi_so_khac': []} 71.198464863251
+KIEM oacca1 T1.0 {'n': 240, 'so_khac': 0, 'chi_so_khac': []} 18.059006273159124
+KIEM oacca1 T0.6 {'n': 240, 'so_khac': 0, 'chi_so_khac': []} 14.855572364004647
+KIEM_DAT 05:29:40
+gio oacca5 T=1.0 L=4 r=1 ma=0 05:30:03
+gio oacca5 T=1.0 L=4 r=2 ma=0 05:30:37
+gio oacca5 T=1.0 L=4 r=3 ma=0 05:31:11
+gio oacca5 T=1.0 L=4 r=4 ma=0 05:31:45
+gio oacca5 T=1.0 L=4 r=5 ma=0 05:32:19
+gio oacca5 T=1.0 L=4 r=6 ma=0 05:32:53
+gio oacca5 T=1.0 L=4 r=7 ma=0 05:33:27
+gio oacca5 T=0.6 L=4 r=1 ma=0 05:33:57
+gio oacca5 T=0.6 L=4 r=2 ma=0 05:34:27
+gio oacca5 T=0.6 L=4 r=3 ma=0 05:34:56
+gio oacca5 T=0.6 L=4 r=4 ma=0 05:35:26
+gio oacca5 T=0.6 L=4 r=5 ma=0 05:35:56
+gio oacca5 T=0.6 L=4 r=6 ma=0 05:36:26
+gio oacca5 T=0.6 L=4 r=7 ma=0 05:36:56
+gio oacca5 T=1.0 L=1 r=1 ma=0 05:37:30
+gio oacca5 T=1.0 L=1 r=2 ma=0 05:38:04
+gio oacca5 T=1.0 L=1 r=3 ma=0 05:38:38
+gio oacca5 T=1.0 L=1 r=4 ma=0 05:39:12
+gio oacca5 T=1.0 L=1 r=5 ma=0 05:39:46
+gio oacca5 T=1.0 L=1 r=6 ma=0 05:40:19
+gio oacca5 T=1.0 L=1 r=7 ma=0 05:40:53
+gio oacca5 T=0.6 L=1 r=1 ma=0 05:41:23
+gio oacca5 T=0.6 L=1 r=2 ma=0 05:41:53
+gio oacca5 T=0.6 L=1 r=3 ma=0 05:42:23
+gio oacca5 T=0.6 L=1 r=4 ma=0 05:42:53
+gio oacca5 T=0.6 L=1 r=5 ma=0 05:43:23
+gio oacca5 T=0.6 L=1 r=6 ma=0 05:43:53
+gio oacca5 T=0.6 L=1 r=7 ma=0 05:44:23
+gio oacca1 r=1 ma=0 05:44:40
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+gio ktnr r=1 ma=0 05:45:05
+gio oacca1 r=2 ma=0 05:45:22
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+gio ktnr r=2 ma=0 05:45:47
+gio oacca1 r=3 ma=0 05:46:04
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+gio ktnr r=3 ma=0 05:46:28
+gio oacca1 r=4 ma=0 05:46:46
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+gio ktnr r=4 ma=0 05:47:10
+gio oacca1 r=5 ma=0 05:47:28
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+gio ktnr r=5 ma=0 05:47:52
+gio oacca1 r=6 ma=0 05:48:10
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+gio ktnr r=6 ma=0 05:48:34
+gio oacca1 r=7 ma=0 05:48:52
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+gio ktnr r=7 ma=0 05:49:16
+GIO_XONG 05:49:26
+oacca5_L4_r1 ma=0 05:50:42 0.81 0.67 0.53 1/137 105018
+oacca5_L1_r1 ma=0 05:52:08 0.90 0.70 0.56 1/137 105162
+oacca1_L4_r1 ma=0 05:53:33 0.86 0.71 0.57 1/137 105312
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+ktnr_L4_r1 ma=0 05:54:57 1.44 0.87 0.64 1/138 105463
+oacca5_L4_r2 ma=0 05:56:23 1.02 0.84 0.65 1/138 105610
+oacca5_L1_r2 ma=0 05:57:49 0.97 0.84 0.66 1/139 105754
+oacca1_L4_r2 ma=0 05:59:14 0.90 0.81 0.66 1/138 105902
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+ktnr_L4_r2 ma=0 06:00:38 1.35 0.91 0.70 1/139 106055
+oacca5_L4_r3 ma=0 06:02:04 1.07 0.90 0.72 1/139 106202
+oacca5_L1_r3 ma=0 06:03:30 0.96 0.89 0.73 1/138 106349
+oacca1_L4_r3 ma=0 06:04:54 0.95 0.87 0.74 1/138 106497
+/home/xilinx/ssvep_zcu104_pkg/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+ktnr_L4_r3 ma=0 06:06:19 1.05 0.88 0.75 1/138 106633
+SWEEP_DONE 06:06:29

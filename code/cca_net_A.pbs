@@ -1,0 +1,43 @@
+#!/bin/bash
+#PBS -N ton_ccanet_A
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=24:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Job A tai hien CCA-Net: Benchmark. CN-goc 1,0 s (cong), CN-gt 1,0 s va 0,6 s.
+# Het walltime: gui lai dung tep nay, ma bo qua fold da co (foldNNN.json), config.json chan tron phien ban.
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/ccanet_A_${PBS_JOBID}.log 2>&1
+export CUDA_MPS_PIPE_DIRECTORY=/dev/null
+export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 PYTHONUNBUFFERED=1
+cd $P
+R=$P/results/b1moi_ccanet
+mkdir -p $R
+sha256sum scripts/cca_net_tai_hien.py scripts/cca_net_phan_tich.py scripts/tham-chieu-python/cca-net/shim/config.py
+(cd scripts/tham-chieu-python/cca-net/goc && sha256sum -c SHA256SUMS.txt)
+nvidia-smi --query-gpu=name,memory.total --format=csv
+chay() {   # $1 ds, $2 T, $3 che, $4 thu muc ra, $5 so tien trinh, $6 timeout
+  local pids=()
+  for k in $(seq 1 $5); do
+    timeout $6 $PY scripts/cca_net_tai_hien.py --ds $1 --T $2 --che $3 --folds $k::$5 --out $4 > $4.w$k.log 2>&1 &
+    pids+=($!)
+  done
+  local loi=0
+  for p in "${pids[@]}"; do wait $p || loi=1; done
+  if [ $loi -ne 0 ]; then echo "LOI tien trinh con ($1 $2 $3); xem $4.w*.log"; exit 1; fi
+}
+# chay thu thong (1 fold, 1 vong, khong dung so); log day du, do bo nho dinh de chon so tien trinh
+rm -rf $R/_thu_goc $R/_thu_gt
+timeout 1h $PY scripts/cca_net_tai_hien.py --ds benchmark --T 1.0 --che goc --folds 1::35 --vong 1 --out $R/_thu_goc > $R/_thu_goc.log 2>&1
+timeout 1h $PY scripts/cca_net_tai_hien.py --ds benchmark --T 1.0 --che gt --folds 1::35 --vong 1 --out $R/_thu_gt > $R/_thu_gt.log 2>&1
+grep -h -E "fold|RSS_DINH_KB" $R/_thu_goc.log $R/_thu_gt.log
+KB=$(grep -h "RSS_DINH_KB" $R/_thu_goc.log $R/_thu_gt.log | awk '{print $NF}' | sort -n | tail -1)
+if [ "$KB" -le 13631488 ]; then NW=2; else NW=1; fi        # 13 GiB/tien trinh: 2 tien trinh con du cho trong 32 GB
+echo "RSS dinh $KB KB -> $NW tien trinh"
+chay benchmark 1.0 goc $R/goc_benchmark_T10 $NW 20h
+chay benchmark 1.0 gt $R/gt_benchmark_T10 $NW 20h
+chay benchmark 0.6 gt $R/gt_benchmark_T06 $NW 20h
+echo XONG

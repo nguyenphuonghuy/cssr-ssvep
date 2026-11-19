@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -N ton_ct_pt
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=0
+#PBS -l walltime=06:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/b1moi_ct_pt_${PBS_JOBID}.log 2>&1
+export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 PYTHONUNBUFFERED=1
+cd $P
+mkdir -p results/b1moi_ct
+sha256sum scripts/b1moi_ct_*.py scripts/b1_diem.py
+O=results/b1moi_ct
+$PY scripts/b1moi_ct_buoc0b.py --ds beta --out $O/beta_b1moi_ct_seed20261107_20261114.json

@@ -1,0 +1,1196 @@
+{
+ "seed": 20261107,
+ "hoanvi_sha256": "794001c725aa7cc36aa0b16110faa8eac5cd3a0eadada960dcf33da5bb05aa3f",
+ "phan_tich_sha256": "3d7b15d81aae949ffe2d5af59464b10d27600ef9778b314c352c81cd17a94279",
+ "json_goc_script_trung": {
+  "benchmark_1.0": false,
+  "benchmark_0.6": false,
+  "beta_1.0": false,
+  "beta_0.6": false,
+  "eld_1.0": false,
+  "eld_0.6": false,
+  "dong_1.0": true,
+  "dong_0.6": true
+ },
+ "tep": {
+  "benchmark_1.0": "results/b1moi_hoanvi/benchmark_ktnr-hoanvi_T10_seed20261107_20261118.json",
+  "benchmark_0.6": "results/b1moi_hoanvi/benchmark_ktnr-hoanvi_T06_seed20261107_20261118.json",
+  "beta_1.0": "results/b1moi_hoanvi/beta_ktnr-hoanvi_T10_seed20261107_20261118.json",
+  "beta_0.6": "results/b1moi_hoanvi/beta_ktnr-hoanvi_T06_seed20261107_20261118.json",
+  "eld_1.0": "results/b1moi_hoanvi/eldbeta_ktnr-hoanvi_T10_seed20261107_20261118.json",
+  "eld_0.6": "results/b1moi_hoanvi/eldbeta_ktnr-hoanvi_T06_seed20261107_20261118.json",
+  "dong_1.0": "results/b1moi_hoanvi/dong_ktnr-hoanvi_T10_seed20261107_20261118.json",
+  "dong_0.6": "results/b1moi_hoanvi/dong_ktnr-hoanvi_T06_seed20261107_20261118.json"
+ },
+ "bo": {
+  "benchmark": {
+   "1.0": {
+    "so_nguoi": 35,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.999987487791513e-07,
+     "z_R": 4.999988097997843e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 80.11428571428573,
+      "ktnr": 84.07142857142858,
+      "tinh": 71.11428571428571,
+      "tinh_r": 78.62857142857142
+     },
+     "KTNR_tru_tinh": {
+      "tb": 12.957142857142857,
+      "thap": 9.785714285714286,
+      "cao": 20.555328890626384,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.9571428571428577,
+      "thap": 2.357142857142857,
+      "cao": 6.1,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 67.92857142857143
+    },
+    "B": {
+     "so_bien_the": 6,
+     "tb": {
+      "ktn": 80.29285714285714,
+      "ktnr": 84.02142857142859,
+      "tinh": 70.58333333333333,
+      "tinh_r": 78.05238095238096
+     },
+     "KTNR_tru_tinh": {
+      "tb": 13.438095238095238,
+      "thap": 10.330952380952375,
+      "cao": 20.410378453660684,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.7285714285714286,
+      "thap": 2.314285714285715,
+      "cao": 5.889962369250817,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 0.4809523809523789,
+      "thap": -0.28809523809524074,
+      "cao": 1.6380952380952374,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": -0.22857142857142917,
+      "thap": -0.8595238095238082,
+      "cao": 0.371428571428567,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 70.58333333333333,
+     "ty_le_tap_nguon_trung_goc": 0.2761904761904761,
+     "theo_khoi_cham": {
+      "KTNR_tru_tinh_khoi_tao_x_khoi_cham": [
+       [
+        NaN,
+        14.429,
+        12.786,
+        11.357,
+        13.5,
+        12.714
+       ],
+       [
+        14.643,
+        NaN,
+        13.214,
+        11.643,
+        13.643,
+        12.286
+       ],
+       [
+        14.786,
+        15.0,
+        NaN,
+        12.143,
+        14.143,
+        12.929
+       ],
+       [
+        14.143,
+        13.5,
+        13.429,
+        NaN,
+        13.429,
+        12.357
+       ],
+       [
+        15.0,
+        14.5,
+        13.0,
+        12.071,
+        NaN,
+        13.214
+       ],
+       [
+        14.643,
+        14.643,
+        13.143,
+        12.929,
+        13.929,
+        NaN
+       ]
+      ],
+      "sd_qua_khoi_khoi_tao_tb": 2.4709084015690586,
+      "ghi_chu": "bao kem; hang = khoi khoi tao, cot = khoi cham; nhan that y_cham"
+     }
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 80.70285714285716,
+      "ktnr": 84.21000000000002,
+      "tinh": 70.68714285714285,
+      "tinh_r": 78.1357142857143
+     },
+     "KTNR_tru_tinh": {
+      "tb": 13.522857142857147,
+      "thap": 10.448651616717077,
+      "cao": 20.458607835528667,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.507142857142858,
+      "thap": 2.1645611766667607,
+      "cao": 5.513134211117286,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 0.5657142857142863,
+      "thap": -0.32285714285714306,
+      "cao": 1.7811365922543059,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": -0.4499999999999998,
+      "thap": -1.1557142857142848,
+      "cao": 0.1485963060003461,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 70.0642857142857,
+     "ty_le_tap_nguon_trung_goc": 0.16,
+     "tan_so_so_lop_40_dau": {
+      "21": 1,
+      "22": 2,
+      "23": 14,
+      "24": 22,
+      "25": 46,
+      "26": 52,
+      "27": 81,
+      "28": 51,
+      "29": 56,
+      "30": 17,
+      "31": 7,
+      "33": 1
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 350
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "2": 22,
+      "3": 235,
+      "4": 89,
+      "5": 4
+     }
+    },
+    "tieu_chi": {
+     "ben_khi_khoi_tao_bang_khoi_khac": "ben",
+     "nhanh_R_khi_khoi_tao_bang_khoi_khac": "ben",
+     "pham_vi": "ho B doi dong thoi khoi khoi tao va tap luot cham; khong phai tac dong rieng cua khoi khoi tao"
+    }
+   },
+   "0.6": {
+    "so_nguoi": 35,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.999990704801505e-07,
+     "z_R": 4.999991469745169e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 59.32857142857143,
+      "ktnr": 63.457142857142856,
+      "tinh": 49.5,
+      "tinh_r": 57.385714285714286
+     },
+     "KTNR_tru_tinh": {
+      "tb": 13.957142857142857,
+      "thap": 9.985714285714286,
+      "cao": 18.896063932060105,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 4.128571428571429,
+      "thap": 1.9714285714285706,
+      "cao": 6.585714285714285,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 46.0
+    },
+    "B": {
+     "so_bien_the": 6,
+     "tb": {
+      "ktn": 59.271428571428565,
+      "ktnr": 63.869047619047635,
+      "tinh": 48.91666666666666,
+      "tinh_r": 56.74761904761905
+     },
+     "KTNR_tru_tinh": {
+      "tb": 14.95238095238095,
+      "thap": 11.480952380952383,
+      "cao": 19.93243494357068,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 4.597619047619051,
+      "thap": 2.98809523809524,
+      "cao": 6.44859466346348,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 0.9952380952380974,
+      "thap": -0.44523809523809565,
+      "cao": 2.778571428571429,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.4690476190476223,
+      "thap": -0.6850101084582253,
+      "cao": 1.7247750846489338,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 48.91666666666667,
+     "ty_le_tap_nguon_trung_goc": 0.22857142857142856,
+     "theo_khoi_cham": {
+      "KTNR_tru_tinh_khoi_tao_x_khoi_cham": [
+       [
+        NaN,
+        12.929,
+        14.5,
+        13.429,
+        14.071,
+        14.857
+       ],
+       [
+        17.786,
+        NaN,
+        15.786,
+        15.214,
+        14.643,
+        16.286
+       ],
+       [
+        17.357,
+        14.643,
+        NaN,
+        15.857,
+        14.5,
+        15.929
+       ],
+       [
+        16.0,
+        14.643,
+        15.214,
+        NaN,
+        14.214,
+        13.786
+       ],
+       [
+        15.786,
+        14.071,
+        15.643,
+        14.714,
+        NaN,
+        15.0
+       ],
+       [
+        15.857,
+        12.286,
+        14.214,
+        15.429,
+        13.929,
+        NaN
+       ]
+      ],
+      "sd_qua_khoi_khoi_tao_tb": 4.161362237050357,
+      "ghi_chu": "bao kem; hang = khoi khoi tao, cot = khoi cham; nhan that y_cham"
+     }
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 59.92142857142857,
+      "ktnr": 64.32571428571428,
+      "tinh": 48.95857142857142,
+      "tinh_r": 56.905714285714296
+     },
+     "KTNR_tru_tinh": {
+      "tb": 15.367142857142854,
+      "thap": 11.857142857142856,
+      "cao": 20.245307636240643,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 4.404285714285715,
+      "thap": 2.7957142857142854,
+      "cao": 6.170142958931619,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 1.4100000000000008,
+      "thap": -0.28253605016044064,
+      "cao": 3.269392555918416,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.2757142857142852,
+      "thap": -1.098639654043131,
+      "cao": 1.775307574537373,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 48.707142857142856,
+     "ty_le_tap_nguon_trung_goc": 0.09714285714285716,
+     "tan_so_so_lop_40_dau": {
+      "21": 1,
+      "22": 2,
+      "23": 14,
+      "24": 22,
+      "25": 46,
+      "26": 52,
+      "27": 81,
+      "28": 51,
+      "29": 56,
+      "30": 17,
+      "31": 7,
+      "33": 1
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 350
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "2": 22,
+      "3": 235,
+      "4": 89,
+      "5": 4
+     }
+    }
+   }
+  },
+  "beta": {
+   "1.0": {
+    "so_nguoi": 70,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.999993093168786e-07,
+     "z_R": 4.999990270704302e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 63.86904761904763,
+      "ktnr": 67.67857142857144,
+      "tinh": 55.00000000000001,
+      "tinh_r": 61.57142857142858
+     },
+     "KTNR_tru_tinh": {
+      "tb": 12.678571428571429,
+      "thap": 10.57225809350692,
+      "cao": 15.119047619047619,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.809523809523808,
+      "thap": 2.4047619047619038,
+      "cao": 5.375615765037482,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 53.607142857142854
+    },
+    "B": {
+     "so_bien_the": 4,
+     "tb": {
+      "ktn": 63.14583333333332,
+      "ktnr": 67.0952380952381,
+      "tinh": 54.65178571428571,
+      "tinh_r": 61.52380952380951
+     },
+     "KTNR_tru_tinh": {
+      "tb": 12.443452380952383,
+      "thap": 10.627838111669025,
+      "cao": 14.520833333333332,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.949404761904761,
+      "thap": 2.87797619047619,
+      "cao": 5.151713485691721,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": -0.2351190476190471,
+      "thap": -1.3193901260055079,
+      "cao": 0.6815476190476197,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.13988095238095224,
+      "thap": -0.6220238095238098,
+      "cao": 0.8727668787225049,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 54.65178571428571,
+     "ty_le_tap_nguon_trung_goc": 0.26071428571428573,
+     "theo_khoi_cham": {
+      "KTNR_tru_tinh_khoi_tao_x_khoi_cham": [
+       [
+        NaN,
+        11.821,
+        13.75,
+        12.464
+       ],
+       [
+        11.179,
+        NaN,
+        14.179,
+        12.714
+       ],
+       [
+        10.607,
+        12.286,
+        NaN,
+        12.821
+       ],
+       [
+        11.036,
+        12.5,
+        13.964,
+        NaN
+       ]
+      ],
+      "sd_qua_khoi_khoi_tao_tb": 3.9700658714650063,
+      "ghi_chu": "bao kem; hang = khoi khoi tao, cot = khoi cham; nhan that y_cham"
+     }
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 63.16666666666667,
+      "ktnr": 67.48928571428571,
+      "tinh": 54.68690476190476,
+      "tinh_r": 61.8095238095238
+     },
+     "KTNR_tru_tinh": {
+      "tb": 12.802380952380954,
+      "thap": 11.008333333333335,
+      "cao": 14.892001852047752,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 4.322619047619047,
+      "thap": 3.179368129131972,
+      "cao": 5.652891667907933,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 0.12380952380952404,
+      "thap": -0.8007058124152611,
+      "cao": 1.0619047619047612,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.513095238095238,
+      "thap": -0.24444756393302874,
+      "cao": 1.2809523809523828,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 54.54642857142857,
+     "ty_le_tap_nguon_trung_goc": 0.038571428571428576,
+     "tan_so_so_lop_40_dau": {
+      "22": 2,
+      "23": 18,
+      "24": 18,
+      "25": 71,
+      "26": 104,
+      "27": 154,
+      "28": 128,
+      "29": 114,
+      "30": 55,
+      "31": 28,
+      "32": 7,
+      "33": 1
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 700
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "2": 62,
+      "3": 551,
+      "4": 87
+     }
+    },
+    "tieu_chi": {
+     "ben_khi_khoi_tao_bang_khoi_khac": "ben",
+     "nhanh_R_khi_khoi_tao_bang_khoi_khac": "ben",
+     "pham_vi": "ho B doi dong thoi khoi khoi tao va tap luot cham; khong phai tac dong rieng cua khoi khoi tao"
+    }
+   },
+   "0.6": {
+    "so_nguoi": 70,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.999957305823477e-07,
+     "z_R": 4.999991844688301e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 47.333333333333336,
+      "ktnr": 51.880952380952394,
+      "tinh": 40.89285714285714,
+      "tinh_r": 45.77380952380953
+     },
+     "KTNR_tru_tinh": {
+      "tb": 10.988095238095235,
+      "thap": 8.765694699164465,
+      "cao": 13.476190476190474,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 4.547619047619048,
+      "thap": 3.0833333333333335,
+      "cao": 6.261904761904761,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 39.75
+    },
+    "B": {
+     "so_bien_the": 4,
+     "tb": {
+      "ktn": 46.58928571428571,
+      "ktnr": 50.37499999999999,
+      "tinh": 40.60714285714285,
+      "tinh_r": 45.52678571428571
+     },
+     "KTNR_tru_tinh": {
+      "tb": 9.76785714285714,
+      "thap": 8.020740375998201,
+      "cao": 11.892857142857142,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.7857142857142856,
+      "thap": 2.6964285714285707,
+      "cao": 5.017857142857142,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": -1.2202380952380965,
+      "thap": -2.4791666666666674,
+      "cao": -0.07550690940117367,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": -0.7619047619047624,
+      "thap": -1.6964285714285716,
+      "cao": 0.0929542991162698,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 40.60714285714285,
+     "ty_le_tap_nguon_trung_goc": 0.2571428571428571,
+     "theo_khoi_cham": {
+      "KTNR_tru_tinh_khoi_tao_x_khoi_cham": [
+       [
+        NaN,
+        12.036,
+        10.821,
+        10.107
+       ],
+       [
+        9.714,
+        NaN,
+        9.5,
+        8.607
+       ],
+       [
+        8.857,
+        11.75,
+        NaN,
+        9.536
+       ],
+       [
+        8.786,
+        10.286,
+        7.214,
+        NaN
+       ]
+      ],
+      "sd_qua_khoi_khoi_tao_tb": 5.202719290275313,
+      "ghi_chu": "bao kem; hang = khoi khoi tao, cot = khoi cham; nhan that y_cham"
+     }
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 46.8095238095238,
+      "ktnr": 50.62857142857143,
+      "tinh": 40.57976190476191,
+      "tinh_r": 45.47380952380952
+     },
+     "KTNR_tru_tinh": {
+      "tb": 10.048809523809524,
+      "thap": 8.322619047619046,
+      "cao": 12.239261259234429,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.8190476190476197,
+      "thap": 2.7547619047619043,
+      "cao": 5.021417173618903,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": -0.9392857142857153,
+      "thap": -2.4404761904761916,
+      "cao": 0.3107142857142849,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": -0.728571428571428,
+      "thap": -1.6929635372159444,
+      "cao": 0.2241738746702236,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 40.6892857142857,
+     "ty_le_tap_nguon_trung_goc": 0.02,
+     "tan_so_so_lop_40_dau": {
+      "22": 2,
+      "23": 18,
+      "24": 18,
+      "25": 71,
+      "26": 104,
+      "27": 154,
+      "28": 128,
+      "29": 114,
+      "30": 55,
+      "31": 28,
+      "32": 7,
+      "33": 1
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 700
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "2": 62,
+      "3": 551,
+      "4": 87
+     }
+    }
+   }
+  },
+  "eld": {
+   "1.0": {
+    "so_nguoi": 100,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.999844641639939e-07,
+     "z_R": 4.999691664564487e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 65.34782608695652,
+      "ktnr": 69.17391304347828,
+      "tinh": 56.65217391304347,
+      "tinh_r": 63.13043478260869
+     },
+     "KTNR_tru_tinh": {
+      "tb": 12.521739130434783,
+      "thap": 9.434782608695654,
+      "cao": 16.130434782608695,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.8260869565217392,
+      "thap": 2.0869565217391304,
+      "cao": 5.869565217391303,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 59.27500000000001
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 67.8608695652174,
+      "ktnr": 71.2304347826087,
+      "tinh": 58.49565217391303,
+      "tinh_r": 64.71304347826086
+     },
+     "KTNR_tru_tinh": {
+      "tb": 12.734782608695655,
+      "thap": 10.521739130434783,
+      "cao": 15.32608695652174,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.369565217391305,
+      "thap": 2.356521739130434,
+      "cao": 4.495652173913043,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 0.21304347826087094,
+      "thap": -1.917391304347826,
+      "cao": 2.326086956521739,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": -0.4565217391304345,
+      "thap": -1.9956521739130417,
+      "cao": 1.000382368083926,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 58.215,
+     "ty_le_tap_nguon_trung_goc": 0.051000000000000004,
+     "tan_so_so_lop_40_dau": {
+      "8": 4,
+      "9": 996
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 4,
+      "1": 61,
+      "2": 381,
+      "3": 520,
+      "4": 34
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "5": 60,
+      "6": 646,
+      "7": 294
+     }
+    }
+   },
+   "0.6": {
+    "so_nguoi": 100,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.99988989710598e-07,
+     "z_R": 4.999934912763848e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 55.86956521739129,
+      "ktnr": 60.1304347826087,
+      "tinh": 49.913043478260875,
+      "tinh_r": 55.086956521739125
+     },
+     "KTNR_tru_tinh": {
+      "tb": 10.217391304347824,
+      "thap": 7.521739130434782,
+      "cao": 13.130434782608697,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 4.260869565217391,
+      "thap": 2.478260869565217,
+      "cao": 6.130434782608694,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 51.474999999999994
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 57.621739130434776,
+      "ktnr": 60.83478260869565,
+      "tinh": 51.15217391304348,
+      "tinh_r": 55.15217391304349
+     },
+     "KTNR_tru_tinh": {
+      "tb": 9.682608695652174,
+      "thap": 7.641181094954543,
+      "cao": 12.065217391304348,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 3.2130434782608677,
+      "thap": 2.265217391304346,
+      "cao": 4.304347826086955,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": -0.5347826086956522,
+      "thap": -2.4217391304347817,
+      "cao": 1.2491744453900615,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": -1.0478260869565224,
+      "thap": -2.554390713271868,
+      "cao": 0.4272844994329238,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 50.7625,
+     "ty_le_tap_nguon_trung_goc": 0.036000000000000004,
+     "tan_so_so_lop_40_dau": {
+      "8": 4,
+      "9": 996
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 4,
+      "1": 61,
+      "2": 381,
+      "3": 520,
+      "4": 34
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "5": 60,
+      "6": 646,
+      "7": 294
+     }
+    }
+   }
+  },
+  "dong": {
+   "1.0": {
+    "so_nguoi": 59,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.999994452914436e-07,
+     "z_R": 4.999975897757025e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 42.98022598870057,
+      "ktnr": 44.56214689265538,
+      "tinh": 36.42655367231639,
+      "tinh_r": 40.056497175141246
+     },
+     "KTNR_tru_tinh": {
+      "tb": 8.135593220338983,
+      "thap": 5.56497175141243,
+      "cao": 11.5819209039548,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 1.5819209039548014,
+      "thap": -0.028248587570622506,
+      "cao": 3.2909604519774005,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 31.82203389830508
+    },
+    "B": {
+     "so_bien_the": 4,
+     "tb": {
+      "ktn": 42.99435028248588,
+      "ktnr": 45.014124293785315,
+      "tinh": 35.27542372881356,
+      "tinh_r": 39.31850282485876
+     },
+     "KTNR_tru_tinh": {
+      "tb": 9.73870056497175,
+      "thap": 7.195516092090137,
+      "cao": 12.93079096045198,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 2.019774011299436,
+      "thap": 0.6885593220338985,
+      "cao": 3.6228813559322046,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 1.603107344632769,
+      "thap": 0.1624293785310743,
+      "cao": 3.2485875706214697,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.4378531073446341,
+      "thap": -0.38135593220338937,
+      "cao": 1.4194915254237315,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 35.27542372881356,
+     "ty_le_tap_nguon_trung_goc": 0.2669491525423729,
+     "theo_khoi_cham": {
+      "KTNR_tru_tinh_khoi_tao_x_khoi_cham": [
+       [
+        NaN,
+        8.305,
+        8.898,
+        7.203
+       ],
+       [
+        9.195,
+        NaN,
+        10.636,
+        9.322
+       ],
+       [
+        10.085,
+        11.398,
+        NaN,
+        10.551
+       ],
+       [
+        9.831,
+        10.508,
+        10.932,
+        NaN
+       ]
+      ],
+      "sd_qua_khoi_khoi_tao_tb": 5.230068868173874,
+      "ghi_chu": "bao kem; hang = khoi khoi tao, cot = khoi cham; nhan that y_cham"
+     }
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 43.05367231638419,
+      "ktnr": 45.24152542372882,
+      "tinh": 35.24293785310735,
+      "tinh_r": 39.495762711864415
+     },
+     "KTNR_tru_tinh": {
+      "tb": 9.998587570621467,
+      "thap": 7.3828898810300245,
+      "cao": 13.092624789914133,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 2.187853107344632,
+      "thap": 0.8983050847457628,
+      "cao": 3.6300279886946165,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 1.8629943502824862,
+      "thap": 0.4392655367231646,
+      "cao": 3.6121882184723977,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.6059322033898306,
+      "thap": -0.4691183131049622,
+      "cao": 1.7810734463276836,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 35.372881355932215,
+     "ty_le_tap_nguon_trung_goc": 0.04067796610169492,
+     "tan_so_so_lop_40_dau": {
+      "22": 2,
+      "23": 15,
+      "24": 12,
+      "25": 56,
+      "26": 96,
+      "27": 129,
+      "28": 110,
+      "29": 94,
+      "30": 47,
+      "31": 22,
+      "32": 7
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 590
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "2": 49,
+      "3": 467,
+      "4": 74
+     }
+    },
+    "tieu_chi": {
+     "ben_khi_khoi_tao_bang_khoi_khac": "ben",
+     "nhanh_R_khi_khoi_tao_bang_khoi_khac": "ben",
+     "pham_vi": "ho B doi dong thoi khoi khoi tao va tap luot cham; khong phai tac dong rieng cua khoi khoi tao"
+    }
+   },
+   "0.6": {
+    "so_nguoi": 59,
+    "luot_sat_hoa_goc": {
+     "ktn": 0,
+     "ktnr": 0
+    },
+    "lech_z_max": {
+     "z_ktn": 4.999981857434221e-07,
+     "z_R": 4.999977973874081e-07
+    },
+    "co": [],
+    "goc": {
+     "tb": {
+      "ktn": 26.765536723163834,
+      "ktnr": 27.824858757062152,
+      "tinh": 23.912429378531076,
+      "tinh_r": 26.28531073446328
+     },
+     "KTNR_tru_tinh": {
+      "tb": 3.9124293785310726,
+      "thap": 2.005649717514124,
+      "cao": 6.31397932772837,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 1.059322033898305,
+      "thap": -0.6497175141242938,
+      "cao": 2.655367231638418,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 21.355932203389834
+    },
+    "B": {
+     "so_bien_the": 4,
+     "tb": {
+      "ktn": 27.231638418079097,
+      "ktnr": 28.605225988700568,
+      "tinh": 23.27330508474576,
+      "tinh_r": 25.529661016949152
+     },
+     "KTNR_tru_tinh": {
+      "tb": 5.331920903954802,
+      "thap": 3.575336006269519,
+      "cao": 7.736581920903955,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 1.3735875706214693,
+      "thap": 0.04237288135593288,
+      "cao": 2.8001412429378534,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 1.41949152542373,
+      "thap": 0.21186440677966162,
+      "cao": 2.697898290619368,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.31426553672316454,
+      "thap": -0.6088511080428882,
+      "cao": 1.2923728813559332,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 23.27330508474576,
+     "ty_le_tap_nguon_trung_goc": 0.2542372881355932,
+     "theo_khoi_cham": {
+      "KTNR_tru_tinh_khoi_tao_x_khoi_cham": [
+       [
+        NaN,
+        3.475,
+        3.941,
+        4.322
+       ],
+       [
+        4.407,
+        NaN,
+        7.373,
+        7.246
+       ],
+       [
+        4.153,
+        5.508,
+        NaN,
+        7.415
+       ],
+       [
+        3.814,
+        5.847,
+        6.483,
+        NaN
+       ]
+      ],
+      "sd_qua_khoi_khoi_tao_tb": 5.412488786743753,
+      "ghi_chu": "bao kem; hang = khoi khoi tao, cot = khoi cham; nhan that y_cham"
+     }
+    },
+    "T": {
+     "so_bien_the": 10,
+     "tb": {
+      "ktn": 26.98870056497175,
+      "ktnr": 28.663841807909602,
+      "tinh": 23.18785310734463,
+      "tinh_r": 25.35028248587571
+     },
+     "KTNR_tru_tinh": {
+      "tb": 5.4759887005649714,
+      "thap": 3.646892655367232,
+      "cao": 7.860401524777121,
+      "phuong_phap": "BCa"
+     },
+     "KTNR_tru_KTN": {
+      "tb": 1.6751412429378532,
+      "thap": 0.4576271186440676,
+      "cao": 3.1581920903954814,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_tinh": {
+      "tb": 1.5635593220338984,
+      "thap": 0.09322033898305086,
+      "cao": 3.1723163841807906,
+      "phuong_phap": "BCa"
+     },
+     "Q_KTNR_tru_KTN": {
+      "tb": 0.6158192090395486,
+      "thap": -0.4518803277196135,
+      "cao": 1.8272375099442084,
+      "phuong_phap": "BCa"
+     },
+     "khoi_tao_mang_nen": 23.529661016949152,
+     "ty_le_tap_nguon_trung_goc": 0.006779661016949153,
+     "tan_so_so_lop_40_dau": {
+      "22": 2,
+      "23": 15,
+      "24": 12,
+      "25": 56,
+      "26": 96,
+      "27": 129,
+      "28": 110,
+      "29": 94,
+      "30": 47,
+      "31": 22,
+      "32": 7
+     },
+     "tan_so_luot_it_nhat_moi_lop": {
+      "0": 590
+     },
+     "tan_so_luot_nhieu_nhat_moi_lop": {
+      "2": 49,
+      "3": 467,
+      "4": 74
+     }
+    }
+   }
+  }
+ }
+}

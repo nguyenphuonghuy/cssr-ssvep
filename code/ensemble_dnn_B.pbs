@@ -1,0 +1,33 @@
+#!/bin/bash
+#PBS -N ton_ed_B
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=24:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Job B tai hien Ensemble-DNN: ED-du BETA; chi gui khi cong tai hien cua job A dat.
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/ed_B_${PBS_JOBID}.log 2>&1
+export CUDA_MPS_PIPE_DIRECTORY=/dev/null
+export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONUNBUFFERED=1
+cd $P
+R=$P/results/b1moi_ed
+mkdir -p $R
+sha256sum scripts/ensemble_dnn.py scripts/ensemble_dnn_phan_tich.py scripts/global_dnn.py scripts/global_dnn_thichnghi.py scripts/b1_diem.py
+nvidia-smi --query-gpu=name,memory.total --format=csv
+chay() {   # $1 ds, $2 T, $3 bien the, $4 thu muc ra, $5 trong so (22), $6 timeout
+  local pids=()
+  for k in 1 2 3 4; do
+    timeout $6 $PY scripts/ensemble_dnn.py --ds $1 --T $2 --bien-the $3 ${5:+--trongso $5} --folds $k::4 --out $4 > $4.w$k.log 2>&1 &
+    pids+=($!)
+  done
+  local loi=0
+  for p in "${pids[@]}"; do wait $p || loi=1; done
+  if [ $loi -ne 0 ]; then echo "LOI tien trinh con ($1 $2 $3); xem $4.w*.log"; exit 1; fi
+}
+$PY scripts/ensemble_dnn_phan_tich.py cong $R/du_benchmark_T10
+chay beta 1.0 du $R/du_beta_T10 "" 11h
+chay beta 0.6 du $R/du_beta_T06 "" 11h
+echo XONG

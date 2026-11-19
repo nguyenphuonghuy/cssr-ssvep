@@ -1,0 +1,21 @@
+nap 70 nguoi (beta), T = 1.0, bien the 22, cuda
+/gpfs0/users/gv_nphuy/envs/eeg-torch27/lib/python3.11/site-packages/torch/nn/modules/conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return F.conv2d(
+fold 2: xong 287 s
+fold 6: xong 251 s
+fold 10: xong 253 s
+fold 14: xong 255 s
+fold 18: xong 254 s
+fold 22: xong 247 s
+fold 26: xong 255 s
+fold 30: xong 255 s
+fold 34: xong 251 s
+fold 38: xong 255 s
+fold 42: xong 250 s
+fold 46: xong 253 s
+fold 50: xong 255 s
+fold 54: xong 255 s
+fold 58: xong 252 s
+fold 62: xong 249 s
+fold 66: xong 246 s
+fold 70: xong 140 s

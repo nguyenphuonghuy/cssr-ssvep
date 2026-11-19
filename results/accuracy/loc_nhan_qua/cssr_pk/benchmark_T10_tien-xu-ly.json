@@ -1,0 +1,16 @@
+{
+ "che_do": "pk",
+ "tep_boc_sha256": "7b48f6de741e69fc3f8f652f0148c2e52301c4e79a36ce42354e3275439c58e6",
+ "script": "global_dnn_huanluyen.py",
+ "script_sha256": "d291aed5cdcc956c1484ff1b973915014a0ee8301976d255660dd988216fd85a",
+ "tham_so": [
+  "--ds",
+  "benchmark",
+  "--T",
+  "1.0",
+  "--folds",
+  "3::4",
+  "--out",
+  "results/loc_nhan_qua/cssr_pk/benchmark_T10"
+ ]
+}

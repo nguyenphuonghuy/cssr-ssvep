@@ -1,0 +1,32 @@
+{
+ "ds": "benchmark",
+ "ket_qua": {
+  "0.6": {
+   "lech_max": 0.0,
+   "so_nguoi_lech": 0,
+   "mac_dem_max": {
+    "khoi_dong": 510000,
+    "sau": 412500
+   },
+   "mac_chon_mot_lan": {
+    "tuong_quan": 255000,
+    "chuan": 255000,
+    "so_lop_co_nhan_gia": 25
+   }
+  },
+  "1.0": {
+   "lech_max": 0.0,
+   "so_nguoi_lech": 0,
+   "mac_dem_max": {
+    "khoi_dong": 850000,
+    "sau": 687500
+   },
+   "mac_chon_mot_lan": {
+    "tuong_quan": 561000,
+    "chuan": 561000,
+    "so_lop_co_nhan_gia": 33
+   }
+  }
+ },
+ "script_sha256": "1e2d49df225e35889cdec7355a75270bc2ddd4465c4534e36372caa257695487"
+}

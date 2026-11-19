@@ -1,0 +1,22 @@
+#!/bin/bash
+#PBS -N ton_gdnn_thu
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=00:40:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Thu Global DNN: 1 fold, 30 epoch, hai cach loc, T = 1,0 s; do thoi gian
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/global_dnn_thu_${PBS_JOBID}.log 2>&1
+export CUDA_MPS_PIPE_DIRECTORY=/dev/null
+export OMP_NUM_THREADS=4 PYTHONUNBUFFERED=1
+cd $P
+nvidia-smi --query-gpu=name,memory.used --format=csv
+for L in filtfilt causal; do
+  $PY scripts/global_dnn.py --loc $L --T 1.0 --folds 1:1 --epochs 30 --out /tmp/gdnn_thu_${PBS_JOBID}_$L
+done
+# 4 tien trinh song song de do thong luong
+for k in 1 2 3 4; do $PY scripts/global_dnn.py --loc causal --T 1.0 --folds $k:$k --epochs 30 --out /tmp/gdnn_thu_${PBS_JOBID}_par & done
+wait
+echo xong

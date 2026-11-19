@@ -1,0 +1,15 @@
+{
+ "seed": 20261107,
+ "ds": "beta",
+ "loc": "causal",
+ "T": 1.0,
+ "epochs": 1000,
+ "lo": 100,
+ "nch": 22,
+ "dropout_cuoi": 0.95,
+ "subjects": 0,
+ "script_sha256": "6410eb933ccb91ca21f34492dab4f54a00cc4922efa64940a741d55634efd880",
+ "thichnghi_sha256": "51040b5317ee2fe20ac7ca82f60d8713d1f9e20ad73eb9b7bd4abf3742afa257",
+ "global_dnn_sha256": "6286239a09b7172bbdf5d80d8808a83d3cf6d2c48fde42eb9f1c18a60bbdca22",
+ "b1_diem_sha256": "d4d551c474c310e273a64360a6412530aeee60464a6dc47d85e07e613cb10d71"
+}

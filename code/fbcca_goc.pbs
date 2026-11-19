@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -N ton_fbcca_goc
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=16gb:gpu_slots=0
+#PBS -l walltime=03:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/
+# Kiem tai hien FBCCA theo giao thuc cua cac bai du lieu goc. Chi CPU.
+set -euo pipefail
+cd /gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+export CUDA_VISIBLE_DEVICES="" OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONUNBUFFERED=1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > logs/fbcca_goc_${PBS_JOBID%%.*}.log 2>&1
+sha256sum scripts/fbcca_goc.py scripts/b1_diem.py scripts/du_lieu_dong.py
+D=$(date +%Y%m%d)
+for g in "benchmark bai_du_lieu" "beta bai_du_lieu" "dong bai_du_lieu" "benchmark oacca" "beta oacca"; do
+  set -- $g
+  $PY scripts/fbcca_goc.py --ds $1 --giao-thuc $2 --cpu 8 --out results/fbcca_goc/${1}_fbcca5_goc-${2}_seed20261107_${D}.json
+done
+echo XONG

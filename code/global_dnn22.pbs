@@ -1,0 +1,44 @@
+#!/bin/bash
+#PBS -N ton_gdnn22
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=10:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Global DNN thu nho N_ch = 22 (892.250 MAC o 1,0 s; 535.350 o 0,6 s), giu nguyen cong thuc huan luyen goc, khong chinh.
+# Hai bien the dropout cuoi 0,95 (goc) va 0,5; lay bien the tot hon lam moc (than trong cho ds2).
+# kiem ds2 co nam tren duong Pareto khong. Luot causal 0,6 va 1,0 s, 35 fold LOSO.
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+mkdir -p $P/logs
+exec > $P/logs/global_dnn22_${PBS_JOBID}.log 2>&1
+export CUDA_MPS_PIPE_DIRECTORY=/dev/null
+export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONUNBUFFERED=1
+cd $P
+NGAY=20261113
+R=$P/results/global_dnn
+mkdir -p $R
+sha256sum scripts/global_dnn.py scripts/global_dnn_tong_hop.py scripts/b1_diem.py
+nvidia-smi --query-gpu=name,memory.total --format=csv
+
+chay() {   # $1 loc, $2 T, $3 thu muc, $4 dropout cuoi
+  local pids=()
+  for k in 1 2 3 4; do
+    $PY scripts/global_dnn.py --loc $1 --T $2 --folds $k::4 --nch 22 --dropout-cuoi $4 --out $3 > $3.w$k.log 2>&1 &
+    pids+=($!)
+  done
+  local loi=0
+  for p in "${pids[@]}"; do wait $p || loi=1; done
+  if [ $loi -ne 0 ]; then echo "LOI tien trinh con ($1, T=$2); xem $3.w*.log"; exit 1; fi
+}
+
+chay causal 0.6 $R/causal_T06_nch22_p95 0.95
+$PY scripts/global_dnn_tong_hop.py --res $R/causal_T06_nch22_p95 --csv $R/benchmark_globaldnn-nch22-p95_causal_T06_seed20261107_${NGAY}.csv
+chay causal 1.0 $R/causal_T10_nch22_p95 0.95
+$PY scripts/global_dnn_tong_hop.py --res $R/causal_T10_nch22_p95 --csv $R/benchmark_globaldnn-nch22-p95_causal_T10_seed20261107_${NGAY}.csv
+chay causal 0.6 $R/causal_T06_nch22_p50 0.5
+$PY scripts/global_dnn_tong_hop.py --res $R/causal_T06_nch22_p50 --csv $R/benchmark_globaldnn-nch22-p50_causal_T06_seed20261107_${NGAY}.csv
+chay causal 1.0 $R/causal_T10_nch22_p50 0.5
+$PY scripts/global_dnn_tong_hop.py --res $R/causal_T10_nch22_p50 --csv $R/benchmark_globaldnn-nch22-p50_causal_T10_seed20261107_${NGAY}.csv
+echo XONG

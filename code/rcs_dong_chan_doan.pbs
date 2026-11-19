@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N ton_rcs_dong
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=0
+#PBS -l walltime=08:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/
+# Chan doan RCS tren Dong 2023. Chi CPU.
+set -euo pipefail
+cd /gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+export CUDA_VISIBLE_DEVICES="" OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 PYTHONUNBUFFERED=1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > logs/rcs_dong_${PBS_JOBID%%.*}.log 2>&1
+sha256sum scripts/rcs_dong_chan_doan.py scripts/rcs_tai_hien.py scripts/b1_diem.py scripts/du_lieu_dong.py
+$PY scripts/rcs_dong_chan_doan.py --out results/rcs_dong/dong_rcs-chan-doan_seed20261107_$(date +%Y%m%d).json
+echo XONG

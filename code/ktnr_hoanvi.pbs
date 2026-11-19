@@ -1,0 +1,34 @@
+#!/bin/bash
+#PBS -N ton_ktnr_hoanvi
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=24:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# Do nhay thu tu luot cua KTN-R.
+# Chay MOT lan; het walltime thi gui lai (bo qua tep ket qua da co).
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/ktnr_hoanvi_${PBS_JOBID}.log 2>&1
+export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 PYTHONUNBUFFERED=1
+cd $P
+O=results/b1moi_hoanvi; K=results/b1moi_ktnr; D=20261118
+mkdir -p $O $P/logs/pbs
+sha256sum scripts/ktnr_hoanvi.py scripts/ktnr_hoanvi_phan_tich.py scripts/ktnr_buoc1.py scripts/b1moi_lai.py scripts/global_dnn.py scripts/b1_diem.py
+nvidia-smi --query-gpu=name,memory.total --format=csv
+chay() {  # $1 ds, $2 ten tep, $3 T, $4 tt, $5 trong so, $6 json goc
+  local ra=$O/$2_ktnr-hoanvi_$4_seed20261107_$D.json
+  if [ -f $ra ]; then echo "da co $ra"; return; fi
+  timeout 6h $PY scripts/ktnr_hoanvi.py --ds $1 --T $3 --trongso $5 --json-goc $6 --out $ra > $O/$2_$4.log 2>&1 || { echo "LOI $1 $3 (xem $O/$2_$4.log)"; exit 1; }
+}
+chay dong dong 1.0 T10 results/b1moi_dong/T10 $K/dong_ktnr-xn_T10_seed20261107_20261117.json
+chay benchmark benchmark 1.0 T10 results/b1v7_lo2/T10 $K/benchmark_ktnr-buoc1_T10_seed20261107_20261115.json
+chay beta beta 1.0 T10 results/b1moi_lai_beta/T10 $K/beta_ktnr-buoc1_T10_seed20261107_20261115.json
+chay eld eldbeta 1.0 T10 results/b1moi_lai_eld/T10 $K/eldbeta_ktnr-buoc1_T10_seed20261107_20261115.json
+chay dong dong 0.6 T06 results/b1moi_dong/T06 $K/dong_ktnr-xn_T06_seed20261107_20261117.json
+chay benchmark benchmark 0.6 T06 results/b1v7_lo2/T06 $K/benchmark_ktnr-buoc1_T06_seed20261107_20261115.json
+chay beta beta 0.6 T06 results/b1moi_lai_beta/T06 $K/beta_ktnr-buoc1_T06_seed20261107_20261115.json
+chay eld eldbeta 0.6 T06 results/b1moi_lai_eld/T06 $K/eldbeta_ktnr-buoc1_T06_seed20261107_20261115.json
+$PY scripts/ktnr_hoanvi_phan_tich.py $O/ktnr_hoanvi_phan-tich_seed20261107_$D.json $O
+echo XONG

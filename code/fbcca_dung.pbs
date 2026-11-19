@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -N ton_fbcca_dung
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=0
+#PBS -l walltime=04:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# FBCCA dung cong thuc Chen 2015 tren Benchmark, BETA, eldBETA, Dong. CPU, uoc duoi 1 gio.
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/fbcca_dung_${PBS_JOBID}.log 2>&1
+export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 PYTHONUNBUFFERED=1 CUDA_VISIBLE_DEVICES=
+cd $P
+mkdir -p results/b1moi_fbcca
+sha256sum scripts/fbcca_dung.py scripts/b1_diem.py scripts/du_lieu_eld.py scripts/du_lieu_dong.py
+$PY scripts/fbcca_dung.py --out results/b1moi_fbcca/fbcca-dung_seed20261107_20261118.json
+echo XONG

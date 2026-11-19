@@ -1,0 +1,31 @@
+#!/bin/bash
+#PBS -N ton_loc_phanra
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=0
+#PBS -l walltime=04:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/loc_nhan_qua/
+# Phan ra anh huong cach loc len FBCCA, CCA mot dai, OACCA (Benchmark, BETA, 1,0 s) va chan doan FBCCA tren Nakanishi. Chi CPU.
+set -uo pipefail
+cd /gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+export CUDA_VISIBLE_DEVICES="" OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONUNBUFFERED=1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > logs/loc_nhan_qua/phan_ra_${PBS_JOBID%%.*}.log 2>&1
+sha256sum scripts_loc/*.py
+D=$(date +%Y%m%d); O=results/loc_nhan_qua/phan_ra; mkdir -p $O
+L=$(mktemp)
+for ds in benchmark beta; do
+  for p in 0 0.39 0.14; do echo "$ds fbcca nq $p 0 giu_T" >> $L; done
+  for pp in fbcca oacca5 oacca1; do
+    [ $pp != fbcca ] && echo "$ds $pp nq 0 0 giu_T" >> $L
+    for d in 0.04 0.08 0.12 0.16; do for bt in giu_T giu_qd; do echo "$ds $pp nq 0 $d $bt" >> $L; done; done
+    echo "$ds $pp pk 0 0 giu_T" >> $L; echo "$ds $pp pk_nt 0 0 giu_T" >> $L
+  done
+done
+echo "nak fbcca nq 0 0 giu_T" >> $L; echo "nak fbcca pk 0 0 giu_T" >> $L
+wc -l $L
+chay() { set -- $1; $PY scripts_loc/loc_nhan_qua_phan_ra.py --ds $1 --pp $2 --F $3 --p $4 --d $5 --bien-the $6 --T 1.0 \
+  --out $O/${1}_${2}_${3}-p${4}-d${5}-${6}_seed20261107_${D}.json || echo "LOI $*"; }
+export -f chay; export PY O D
+cat $L | xargs -P 8 -I{} bash -c 'chay "{}"'
+echo XONG

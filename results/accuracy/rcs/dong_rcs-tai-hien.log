@@ -1,0 +1,41 @@
+nap 59 nguoi: 35 s
+0.6 mo hinh nguon xong 83 s; so dai trong tran = 3
+0.6 5 114 s
+0.6 10 145 s
+0.6 15 176 s
+0.6 20 206 s
+0.6 25 237 s
+0.6 30 268 s
+0.6 35 297 s
+0.6 40 328 s
+0.6 45 358 s
+0.6 50 389 s
+0.6 55 419 s
+0.6 {"rep_trca": 0.1378, "rep_wR": 0.1828, "fbcca5": 0.0887, "fbcca1": 0.1014, "fbcca5_sau": 0.0887, "rec_end": 19.2542, "day_du_lo_sau": 0.1535, "day_du_lo_phien": 0.1479, "day_du_luot_sau": 0.1511, "day_du_luot_phien": 0.1469, "tran_lo_sau": 0.1127, "tran_lo_phien": 0.1151, "tran_luot_sau": 0.1109, "tran_luot_phien": 0.1129, "tran1R_lo_sau": 0.1716, "tran1R_lo_phien": 0.1645, "tran1R_luot_sau": 0.1689, "tran1R_luot_phien": 0.1619} {"tranG_so_dai_fbcca": 0, "tranG_quyet_dinh": null, "mot_dai_trca_gop_lop": 294000, "so_dai_trong_tran": 3, "tran_quyet_dinh": 882000, "fbcca_mot_dai": 531200, "tran1R_so_hai": 5, "tran1R_quyet_dinh": 825200, "day_du_quyet_dinh": 4126000, "gioi_thieu_moi_luot_khong_gioi_han": 87916000} 445 s
+0.8 mo hinh nguon xong 504 s; so dai trong tran = 2
+0.8 5 549 s
+0.8 10 594 s
+0.8 15 636 s
+0.8 20 676 s
+0.8 25 716 s
+0.8 30 755 s
+0.8 35 794 s
+0.8 40 833 s
+0.8 45 873 s
+0.8 50 912 s
+0.8 55 951 s
+0.8 {"rep_trca": 0.2001, "rep_wR": 0.269, "fbcca5": 0.1365, "fbcca1": 0.1599, "fbcca5_sau": 0.1363, "rec_end": 19.5763, "day_du_lo_sau": 0.2316, "day_du_lo_phien": 0.2244, "day_du_luot_sau": 0.2205, "day_du_luot_phien": 0.2146, "tran_lo_sau": 0.1795, "tran_lo_phien": 0.1833, "tran_luot_sau": 0.1846, "tran_luot_phien": 0.1879, "tran1R_lo_sau": 0.2555, "tran1R_lo_phien": 0.251, "tran1R_luot_sau": 0.2525, "tran1R_luot_phien": 0.2475} {"tranG_so_dai_fbcca": 0, "tranG_quyet_dinh": null, "mot_dai_trca_gop_lop": 392000, "so_dai_trong_tran": 2, "tran_quyet_dinh": 784000, "fbcca_mot_dai": 697600, "tran1R_so_hai": 4, "tran1R_quyet_dinh": 950080, "day_du_quyet_dinh": 5448000, "gioi_thieu_moi_luot_khong_gioi_han": 117168000} 982 s
+1.0 mo hinh nguon xong 1048 s; so dai trong tran = 2
+1.0 5 1101 s
+1.0 10 1154 s
+1.0 15 1206 s
+1.0 20 1259 s
+1.0 25 1310 s
+1.0 30 1361 s
+1.0 35 1413 s
+1.0 40 1464 s
+1.0 45 1515 s
+1.0 50 1567 s
+1.0 55 1619 s
+1.0 {"rep_trca": 0.2389, "rep_wR": 0.3193, "fbcca5": 0.1876, "fbcca1": 0.2203, "fbcca5_sau": 0.1843, "rec_end": 18.9492, "day_du_lo_sau": 0.2888, "day_du_lo_phien": 0.2825, "day_du_luot_sau": 0.287, "day_du_luot_phien": 0.2808, "tran_lo_sau": 0.2298, "tran_lo_phien": 0.2316, "tran_luot_sau": 0.2205, "tran_luot_phien": 0.2239, "tran1R_lo_sau": 0.3144, "tran1R_lo_phien": 0.3056, "tran1R_luot_sau": 0.3072, "tran1R_luot_phien": 0.3013} {"tranG_so_dai_fbcca": 0, "tranG_quyet_dinh": null, "mot_dai_trca_gop_lop": 490000, "so_dai_trong_tran": 2, "tran_quyet_dinh": 980000, "fbcca_mot_dai": 864000, "tran1R_so_hai": 2, "tran1R_quyet_dinh": 847120, "day_du_quyet_dinh": 6770000, "gioi_thieu_moi_luot_khong_gioi_han": 146420000} 1661 s
+xong 1661.1297686100006

@@ -1,0 +1,304 @@
+{
+ "che_do": "do-tre",
+ "lap": 200,
+ "luong": "4",
+ "numpy": "1.21.5",
+ "ket_qua": {
+  "benchmark_T0.6": {
+   "S": 34,
+   "N": 40,
+   "C": 9,
+   "ns": 150,
+   "so_dai_khoi_dong": 2,
+   "khoi_dong": {
+    "tb_ms": 5.889619411760805,
+    "trung_vi_ms": 5.904700000002094,
+    "p95_ms": 5.969469500001878,
+    "max_ms": 6.335210000031566
+   },
+   "sau": {
+    "tb_ms": 4.781821384615516,
+    "trung_vi_ms": 4.772339999988162,
+    "p95_ms": 4.845682000041052,
+    "max_ms": 5.005970000013349
+   },
+   "luot_chon_nguon_ms": 31.208349999985785,
+   "mac_khoi_dong": {
+    "chieu": 91800,
+    "tuong_quan": 408000,
+    "chuan": 10200,
+    "khac": 8228
+   },
+   "mac_sau": {
+    "chieu": 74250,
+    "tuong_quan": 330000,
+    "chuan": 8250,
+    "khac": 6655
+   },
+   "mac_chon": {
+    "tuong_quan": 265200,
+    "chuan": 265200,
+    "so_lop_co_nhan_gia": 26
+   }
+  },
+  "benchmark_T1.0": {
+   "S": 34,
+   "N": 40,
+   "C": 9,
+   "ns": 250,
+   "so_dai_khoi_dong": 2,
+   "khoi_dong": {
+    "tb_ms": 7.7946132352922985,
+    "trung_vi_ms": 7.751764999994748,
+    "p95_ms": 7.935296499968557,
+    "max_ms": 7.959980000009637
+   },
+   "sau": {
+    "tb_ms": 7.155356102566365,
+    "trung_vi_ms": 7.1539099999995415,
+    "p95_ms": 7.230438000016193,
+    "max_ms": 7.412470000019766
+   },
+   "luot_chon_nguon_ms": 45.36315000001423,
+   "mac_khoi_dong": {
+    "chieu": 153000,
+    "tuong_quan": 680000,
+    "chuan": 17000,
+    "khac": 8228
+   },
+   "mac_sau": {
+    "chieu": 123750,
+    "tuong_quan": 550000,
+    "chuan": 13750,
+    "khac": 6655
+   },
+   "mac_chon": {
+    "tuong_quan": 476000,
+    "chuan": 476000,
+    "so_lop_co_nhan_gia": 28
+   }
+  },
+  "beta_T0.6": {
+   "S": 69,
+   "N": 40,
+   "C": 9,
+   "ns": 150,
+   "so_dai_khoi_dong": 1,
+   "khoi_dong": {
+    "tb_ms": 5.008237941181652,
+    "trung_vi_ms": 4.99561000000881,
+    "p95_ms": 5.046932500010826,
+    "max_ms": 5.06617000002052
+   },
+   "sau": {
+    "tb_ms": 4.8127386153822,
+    "trung_vi_ms": 4.803620000018327,
+    "p95_ms": 4.885777000043845,
+    "max_ms": 4.945969999994304
+   },
+   "luot_chon_nguon_ms": 34.398920000001,
+   "mac_khoi_dong": {
+    "chieu": 93150,
+    "tuong_quan": 414000,
+    "chuan": 10350,
+    "khac": 8349
+   },
+   "mac_sau": {
+    "chieu": 74250,
+    "tuong_quan": 330000,
+    "chuan": 8250,
+    "khac": 6655
+   },
+   "mac_chon": {
+    "tuong_quan": 310500,
+    "chuan": 310500,
+    "so_lop_co_nhan_gia": 30
+   }
+  },
+  "beta_T1.0": {
+   "S": 69,
+   "N": 40,
+   "C": 9,
+   "ns": 250,
+   "so_dai_khoi_dong": 1,
+   "khoi_dong": {
+    "tb_ms": 6.42543235293695,
+    "trung_vi_ms": 6.425995000000739,
+    "p95_ms": 6.491124999979547,
+    "max_ms": 6.505709999998999
+   },
+   "sau": {
+    "tb_ms": 7.123395743587352,
+    "trung_vi_ms": 7.105409999951462,
+    "p95_ms": 7.3173149999888665,
+    "max_ms": 7.694539999988592
+   },
+   "luot_chon_nguon_ms": 44.43241000001308,
+   "mac_khoi_dong": {
+    "chieu": 155250,
+    "tuong_quan": 690000,
+    "chuan": 17250,
+    "khac": 8349
+   },
+   "mac_sau": {
+    "chieu": 123750,
+    "tuong_quan": 550000,
+    "chuan": 13750,
+    "khac": 6655
+   },
+   "mac_chon": {
+    "tuong_quan": 483000,
+    "chuan": 483000,
+    "so_lop_co_nhan_gia": 28
+   }
+  },
+  "eldbeta_T0.6": {
+   "S": 99,
+   "N": 9,
+   "C": 9,
+   "ns": 150,
+   "so_dai_khoi_dong": 2,
+   "khoi_dong": {
+    "tb_ms": 7.208037941174606,
+    "trung_vi_ms": 7.211525000002439,
+    "p95_ms": 7.2546605000070485,
+    "max_ms": 7.261019999987184
+   },
+   "sau": {
+    "tb_ms": 2.206676000000348,
+    "trung_vi_ms": 2.2122400000057496,
+    "p95_ms": 2.2584690000201135,
+    "max_ms": 2.29741000003969
+   },
+   "luot_chon_nguon_ms": 26.72202999997353,
+   "mac_khoi_dong": {
+    "chieu": 267300,
+    "tuong_quan": 267300,
+    "chuan": 29700,
+    "khac": 5544
+   },
+   "mac_sau": {
+    "chieu": 74250,
+    "tuong_quan": 74250,
+    "chuan": 8250,
+    "khac": 1540
+   },
+   "mac_chon": {
+    "tuong_quan": 237600,
+    "chuan": 237600,
+    "so_lop_co_nhan_gia": 8
+   }
+  },
+  "eldbeta_T1.0": {
+   "S": 99,
+   "N": 9,
+   "C": 9,
+   "ns": 250,
+   "so_dai_khoi_dong": 2,
+   "khoi_dong": {
+    "tb_ms": 10.415727941180235,
+    "trung_vi_ms": 10.413935000002539,
+    "p95_ms": 10.469414500019525,
+    "max_ms": 10.481210000023111
+   },
+   "sau": {
+    "tb_ms": 3.2697351282084313,
+    "trung_vi_ms": 3.2707400000049347,
+    "p95_ms": 3.321108000017148,
+    "max_ms": 3.449190000026192
+   },
+   "luot_chon_nguon_ms": 42.484300000012354,
+   "mac_khoi_dong": {
+    "chieu": 445500,
+    "tuong_quan": 445500,
+    "chuan": 49500,
+    "khac": 5544
+   },
+   "mac_sau": {
+    "chieu": 123750,
+    "tuong_quan": 123750,
+    "chuan": 13750,
+    "khac": 1540
+   },
+   "mac_chon": {
+    "tuong_quan": 445500,
+    "chuan": 445500,
+    "so_lop_co_nhan_gia": 9
+   }
+  },
+  "lee2019_T0.6": {
+   "S": 53,
+   "N": 4,
+   "C": 9,
+   "ns": 150,
+   "so_dai_khoi_dong": 2,
+   "khoi_dong": {
+    "tb_ms": 3.3185238235325736,
+    "trung_vi_ms": 3.3212449999950877,
+    "p95_ms": 3.3468309999989287,
+    "max_ms": 3.3670099999767444
+   },
+   "sau": {
+    "tb_ms": 1.686538410254821,
+    "trung_vi_ms": 1.6564300000254661,
+    "p95_ms": 1.7507669999929476,
+    "max_ms": 2.439349999974638
+   },
+   "luot_chon_nguon_ms": 9.372560000031172,
+   "mac_khoi_dong": {
+    "chieu": 143100,
+    "tuong_quan": 63600,
+    "chuan": 15900,
+    "khac": 1378
+   },
+   "mac_sau": {
+    "chieu": 74250,
+    "tuong_quan": 33000,
+    "chuan": 8250,
+    "khac": 715
+   },
+   "mac_chon": {
+    "tuong_quan": 63600,
+    "chuan": 63600,
+    "so_lop_co_nhan_gia": 4
+   }
+  },
+  "lee2019_T1.0": {
+   "S": 53,
+   "N": 4,
+   "C": 9,
+   "ns": 250,
+   "so_dai_khoi_dong": 2,
+   "khoi_dong": {
+    "tb_ms": 4.945366764703148,
+    "trung_vi_ms": 4.93421499996316,
+    "p95_ms": 4.97850000000426,
+    "max_ms": 4.986169999995127
+   },
+   "sau": {
+    "tb_ms": 2.5938966666686634,
+    "trung_vi_ms": 2.6009899999621666,
+    "p95_ms": 2.649155000005976,
+    "max_ms": 2.709140000035859
+   },
+   "luot_chon_nguon_ms": 13.855629999966368,
+   "mac_khoi_dong": {
+    "chieu": 238500,
+    "tuong_quan": 106000,
+    "chuan": 26500,
+    "khac": 1378
+   },
+   "mac_sau": {
+    "chieu": 123750,
+    "tuong_quan": 55000,
+    "chuan": 13750,
+    "khac": 715
+   },
+   "mac_chon": {
+    "tuong_quan": 106000,
+    "chuan": 106000,
+    "so_lop_co_nhan_gia": 4
+   }
+  }
+ }
+}

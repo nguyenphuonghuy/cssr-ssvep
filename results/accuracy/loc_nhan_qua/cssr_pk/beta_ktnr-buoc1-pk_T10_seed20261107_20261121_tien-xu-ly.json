@@ -1,0 +1,16 @@
+{
+ "che_do": "pk",
+ "tep_boc_sha256": "7b48f6de741e69fc3f8f652f0148c2e52301c4e79a36ce42354e3275439c58e6",
+ "script": "ktnr_buoc1.py",
+ "script_sha256": "5a091cfd048c4d4dd46c0640c040292b5c51ff261e0e8c0686f4ac49d55e9924",
+ "tham_so": [
+  "--ds",
+  "beta",
+  "--T",
+  "1.0",
+  "--trongso",
+  "results/loc_nhan_qua/cssr_pk/beta_T10",
+  "--out",
+  "results/loc_nhan_qua/cssr_pk/beta_ktnr-buoc1-pk_T10_seed20261107_20261121.json"
+ ]
+}

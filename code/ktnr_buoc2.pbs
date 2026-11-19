@@ -1,0 +1,47 @@
+#!/bin/bash
+#PBS -N ton_ktnr_b2
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=8:mem=32gb:gpu_slots=1
+#PBS -l walltime=20:00:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_dnton/projects/qldanc_ton_b1/logs/pbs/
+# BUOC 2 KTN-R tren Nakanishi 2015 (xac nhan, chay MOT lan) + job C tai hien CCA-Net (gt) tren Nakanishi.
+# Log chinh khong co do chinh xac (ktnr/ct ghi log rieng canh ket qua); phan tich bang ktnr_buoc2_phan_tich.py sau khi chep ve.
+# Cac bien the phu (alpha 0,25 / 1, oracle,...) chi bao kem, khong thay phep kiem. Chay MOT lan.
+set -euo pipefail
+P=/gpfs0/users/gv_dnton/projects/qldanc_ton_b1
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/ktnr_b2_${PBS_JOBID}.log 2>&1
+export CUDA_MPS_PIPE_DIRECTORY=/dev/null
+export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 PYTHONUNBUFFERED=1
+cd $P
+D=$(date +%Y%m%d)
+RN=$P/results/b1moi_nak; RK=$P/results/b1moi_ktnr; RC=$P/results/b1moi_ct; RCN=$P/results/b1moi_ccanet
+mkdir -p $RN $RK $RC $RCN
+sha256sum scripts/du_lieu_nak.py scripts/global_dnn_huanluyen.py scripts/global_dnn_thichnghi.py scripts/global_dnn.py scripts/b1_diem.py scripts/ktnr_buoc1.py \
+  scripts/b1moi_lai.py scripts/b1moi_ct_nak.py scripts/ktnr_dem_mac.py scripts/ktnr_buoc2_phan_tich.py scripts/cca_net_tai_hien.py
+(cd scripts/tham-chieu-python/cca-net/goc && sha256sum -c SHA256SUMS.txt)
+nvidia-smi --query-gpu=name,memory.total --format=csv
+# 1. kiem cau truc du lieu (khong do chinh xac)
+$PY -c "import sys; sys.path.insert(0,'scripts'); import du_lieu_nak as N; import numpy as np
+for s in range(1,11):
+    X,y,f=N.nap(s); assert X.shape==(180,8,1114) and np.isfinite(X).all() and np.array_equal(np.bincount(y),np.full(12,15))
+print('du lieu Nakanishi: 10/10 nguoi dung cau truc')"
+# 2. chay thu thong (khong dung so)
+rm -rf $RN/_thu
+timeout 30m $PY scripts/global_dnn_huanluyen.py --ds nak --T 1.0 --folds 1::10 --epochs 1 --out $RN/_thu
+timeout 30m $PY scripts/ktnr_buoc1.py --ds nak --T 1.0 --trongso $RN/_thu --folds 1 --thu --out $RN/_thu/_ktnr_thu.json > /dev/null
+# 3. mang nen LOSO 10 fold x 2 cua so (cung ham huan luyen lo 2: 1000 vong, lo 100, nch 22, dropout cuoi 0,95, loc nhan qua)
+timeout 4h $PY scripts/global_dnn_huanluyen.py --ds nak --T 1.0 --out $RN/T10
+timeout 4h $PY scripts/global_dnn_huanluyen.py --ds nak --T 0.6 --out $RN/T06
+# 4. KTN, KTN-R (alpha 0,5, H 5, K 5, n0 40)
+timeout 2h $PY scripts/ktnr_buoc1.py --ds nak --T 1.0 --trongso $RN/T10 --out $RK/nak_ktnr-buoc2_T10_seed20261107_$D.json > $RK/nak_ktnr-buoc2_T10.log 2>&1
+timeout 2h $PY scripts/ktnr_buoc1.py --ds nak --T 0.6 --trongso $RN/T06 --out $RK/nak_ktnr-buoc2_T06_seed20261107_$D.json > $RK/nak_ktnr-buoc2_T06.log 2>&1
+# 5. doi chung kh_deu, ct_R, FBCCA (CPU; che do xac nhan chi xuat ct_R trong lo cai tien)
+CT_CHI_R=1 timeout 3h $PY scripts/b1moi_ct_nak.py --out $RC/nak_b1moi_ct_seed20261107_$D.json > $RC/nak_b1moi_ct.log 2>&1
+# 6. HB3: dem MAC tuong minh
+$PY scripts/ktnr_dem_mac.py $RK/ktnr_dem-mac_HB3_$D.json
+# 7. job C: CCA-Net gt tren Nakanishi (1 tien trinh)
+timeout 4h $PY scripts/cca_net_tai_hien.py --ds nak --T 1.0 --che gt --folds 1::1 --out $RCN/gt_nak_T10 > $RCN/gt_nak_T10.w1.log 2>&1
+timeout 4h $PY scripts/cca_net_tai_hien.py --ds nak --T 0.6 --che gt --folds 1::1 --out $RCN/gt_nak_T06 > $RCN/gt_nak_T06.w1.log 2>&1
+echo XONG

@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -N ton_dt_kiem
+#PBS -q sharedgpu
+#PBS -l select=1:ncpus=4:mem=8gb
+#PBS -l walltime=00:30:00
+#PBS -j oe
+#PBS -o /gpfs0/users/gv_mtthai/projects/qldanc_ton_b1gop/logs/pbs/
+# Kiem lop (a) ban chuyen OACCA va SFDA tren du lieu tong hop (CPU, vai phut). Khong dung EEG.
+P=/gpfs0/users/gv_mtthai/projects/qldanc_ton_b1gop
+PY=/gpfs0/users/gv_nphuy/envs/eeg-torch27/bin/python
+exec > $P/logs/doi_thu_kiem_${PBS_JOBID}.log 2>&1
+export CUDA_VISIBLE_DEVICES="" OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 PYTHONUNBUFFERED=1
+cd $P/scripts_d6
+sha256sum doi_thu_oacca.py doi_thu_sfda.py doi_thu_kiem.py doi_thu_kiem_sfda.py
+set -e
+$PY doi_thu_kiem.py
+$PY doi_thu_kiem_sfda.py
+echo "LOP A DAT (ca hai ma kiem thoat 0)"
